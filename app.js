@@ -5,9 +5,8 @@ const app = express();
 // Middleware to parse JSON requests
 app.use(express.json());
 
-// Example route
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+import userRoutes from "./routes/user_route.js";
+// Use the imported routes
+app.use("/api/users", userRoutes);
 
 export default app;
